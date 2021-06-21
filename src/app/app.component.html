@@ -1,3 +1,4 @@
+<h2>Attention! This demo uses a public API. Anyone can type anything and persist its values</h2>
 <div *ngIf="tags$ | async as tagsQ">
   <div *ngIf="tagsQ.data && tagsQ.data.length">
     <div *ngFor="let tag of tagsQ.data; trackBy: trackById; let i = index">
