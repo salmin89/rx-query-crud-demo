@@ -1,0 +1,18 @@
+<div *ngIf="tags$ | async as tagsQ">
+  <div *ngIf="tagsQ.data && tagsQ.data.length">
+    <div *ngFor="let tag of tagsQ.data; trackBy: trackById; let i = index">
+      <input type="text" [(ngModel)]="tag.name" />
+      <input type="text" [(ngModel)]="tag.color" />
+      <input type="text" [value]="tag.id || 'loading...'" disabled />
+      <button (click)="onUpdate(tagsQ, tag, i)">Save</button>
+      <button (click)="onDestroy(tagsQ, tag)">x</button>
+    </div>
+  </div>
+
+  <br /><br /><br />
+
+  Add new:
+  <input type="text" placeholder="name" [(ngModel)]="newTagData.name" />
+  <input type="text" placeholder="color" [(ngModel)]="newTagData.color" />
+  <button (click)="onCreate(tagsQ)">Create</button>
+</div>
