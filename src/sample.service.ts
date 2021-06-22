@@ -15,7 +15,7 @@ const defaultConfig = {
   providedIn: 'root'
 })
 export class SampleService extends HttpClient {
-  BASE_URL = 'https://6089b8b68c8043001757f52f.mockapi.io/tag';
+  BASE_URL = 'https://6089b8b68c8043001757f52f.mockapi.io/tags';
 
   create(updatedValues, dateNow) {
     return query(
